@@ -21,4 +21,4 @@ ENV PYTHONPATH=/app/ai_service
 WORKDIR /app/ai_service
 EXPOSE 8765
 
-CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8765"]
+CMD ["sh", "-c", "python -m uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8765}"]
