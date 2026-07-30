@@ -11,7 +11,7 @@ if (!defined('AI_SERVICE_BASE_URL')) {
     $envUrl = getenv('MEDCONNECT_AI_SERVICE_URL');
     define(
         'AI_SERVICE_BASE_URL',
-        $envUrl ? rtrim((string) $envUrl, '/') : 'http://127.0.0.1:8765'
+        $envUrl ? rtrim((string) $envUrl, '/') : 'https://medcon-oj84.onrender.com'
     );
 }
 
@@ -27,7 +27,7 @@ if (!defined('AI_SERVICE_ENABLED')) {
 if (!defined('AI_SERVICE_AUTO_START')) {
     define(
         'AI_SERVICE_AUTO_START',
-        !in_array(strtolower((string) (getenv('MEDCONNECT_AI_AUTO_START') ?: 'true')), ['0', 'false', 'no', 'off'], true)
+        !in_array(strtolower((string) (getenv('MEDCONNECT_AI_AUTO_START') ?: 'false')), ['0', 'false', 'no', 'off'], true)
     );
 }
 
